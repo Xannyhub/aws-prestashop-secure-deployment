@@ -1,46 +1,59 @@
-# AWS PrestaShop Deployment with Separate Application and Database Servers
+# AWS PrestaShop Deployment — Two-Tier Architecture
 
 ## Project Overview
-Deployed a PrestaShop e-commerce application on AWS using a two-server architecture, separating the application server from the database server.
 
-This project demonstrates practical experience with cloud infrastructure, Linux administration, database connectivity, network security, and web application deployment.
+A hands-on cloud deployment project using Amazon Web Services (AWS), with PrestaShop hosted on a dedicated application server and MariaDB hosted on a separate database server.
+
+The project demonstrates practical skills in cloud infrastructure, Linux administration, network security, database connectivity, and troubleshooting.
 
 ## Architecture
-- **Application server:** Ubuntu EC2 instance running Apache, PHP, and PrestaShop.
-- **Database server:** Separate Ubuntu EC2 instance running MariaDB.
-- **Database connectivity:** Private communication between the application and database servers.
-- **Web access:** HTTP access to the application through the application server's public IP.
-- **Cloud platform:** Amazon Web Services (AWS).
 
-## Security Measures
-- Separated the application and database workloads across two servers.
-- Restricted database access to the application server's security group on TCP port 3306.
-- Configured database connectivity using the database server's private IP address.
+| Component | Implementation |
+|---|---|
+| Cloud platform | AWS |
+| Compute | Amazon EC2 |
+| Operating system | Ubuntu Linux |
+| Web server | Apache HTTP Server |
+| Application runtime | PHP |
+| E-commerce application | PrestaShop |
+| Database | MariaDB |
+| Network security | AWS Security Groups |
+
+## Architecture Diagram
+
+See the [Architecture Diagram](docs/architecture-diagram.md) for the application and database request flow.
+
+## Security Highlights
+
+- Separated application and database servers.
+- Configured private database connectivity.
+- Restricted database access using AWS security groups.
 - Kept the database server without a public IP address.
-- Configured network access through AWS security groups.
 
-## Technologies Used
-- Amazon EC2
-- AWS VPC and Security Groups
-- Ubuntu Linux
-- Apache HTTP Server
-- PHP
-- MariaDB
-- PrestaShop
-- Linux command-line administration
+## Project Documentation
+
+- [Architecture Overview](docs/architecture.md)
+- [Deployment Guide](docs/deployment.md)
+- [Security Configuration](docs/security.md)
+- [Architecture Diagram](docs/architecture-diagram.md)
+
+## Screenshots
+
+- [EC2 Instances](screenshots/ec2-instances.png)
+- [AWS Security Group Configuration](screenshots/aws-security-group.png)
+- [PrestaShop Deployment](screenshots/prestashop-homepage.png)
 
 ## Skills Demonstrated
-- Cloud infrastructure deployment
-- Linux server administration
-- Network troubleshooting
-- Database configuration and connectivity
-- Security group configuration
-- Multi-tier application architecture
-- Web application deployment and troubleshooting
 
-## Lessons Learned
-This project provided hands-on experience troubleshooting server connectivity, configuring database access, resolving package installation issues, and deploying an application across separate cloud instances.
+AWS EC2 · AWS Security Groups · Ubuntu Linux · Apache · PHP · MariaDB · Network Troubleshooting · Web Application Deployment
 
-## Disclaimer 
-This project was created for educational and portfolio purposes. Production deployments require HTTPS, secure secrets management, regular patching, backups, monitoring, and additional hardening.
-This project was created for educational and portfolio purposes. Production deployments require HTTPS, secure secrets management, regular patching, backups, monitoring, and additional hardening.
+## Future Improvements
+
+- Configure HTTPS/TLS.
+- Strengthen SSH and administrative access controls.
+- Implement backups, centralized logging, and monitoring.
+- Review IAM permissions and server hardening.
+
+## Disclaimer
+Educational portfolio project. This deployment should not be considered production-ready without further security hardening. No credentials, private keys, or secrets should be stored in this repository.
+Educational portfolio project. This deployment should not be considered production-ready without further security hardening. No credentials, private keys, or secrets should be stored in this repository.
